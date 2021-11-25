@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1 {font-family: "Montserrat", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+
+</style>
+<body>
+
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<div class="w3-opacity">
+
+
+<header class="w3-center w3-margin-bottom">
+  <h1><b>Our Designs</b></h1>
+  <p><b>Contact us at learningcscience@gmail.com</b></p>
+
+</header>
+</div>
+
+<!-- Photo Grid -->
+<div class="w3-row-padding" id="myGrid" style="margin-bottom:128px">
+  <div class="w3-third">
+    <img src="1.jpg" style="width:100%">
+    <img src="4.jpg" style="width:100%">
+    <img src="7.jpg" style="width:100%">
+    <img src="10.jpg" style="width:100%">
+    <img src="13.jpg" style="width:100%">
+    <img src="16.jpg" style="width:100%">
+    <img src="19.jpg" style="width:100%">
+    <img src="22.jpg" style="width:100%">
+    <img src="25.jpg" style="width:100%">
+
+  </div>
+
+  <div class="w3-third">
+
+    <img src="2.jpg" style="width:100%">
+    <img src="5.jpg" style="width:100%">
+    <img src="8.jpg" style="width:100%">
+    <img src="11.jpg" style="width:100%">
+    <img src="14.jpg" style="width:100%">
+    <img src="17.jpg" style="width:100%">
+    <img src="20.jpg" style="width:100%">
+    <img src="23.jpg" style="width:100%">
+    <img src="26.jpg" style="width:100%">
+
+  </div>
+
+  <div class="w3-third">
+    <img src="3.jpg" style="width:100%">
+    <img src="6.jpg" style="width:100%">
+    <img src="9.jpg" style="width:100%">
+    <img src="12.jpg" style="width:100%">
+    <img src="15.jpg" style="width:100%">
+    <img src="18.jpg" style="width:100%">
+    <img src="21.jpg" style="width:100%">
+    <img src="24.jpg" style="width:100%">
+    <img src="27.jpg" style="width:100%">
+
+  </div>
+</div>
+
+
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+
+<!-- End Page Content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px"> 
+
+  <p class="w3-medium">Copyright &copy; 2021. All Rights Reserved.</p>
+</footer>
+ 
+<script>
+
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+
+let imgs = document.querySelectorAll("img");
+
+for(let i=0; i<imgs.length; i++){
+
+let img = imgs[i];
+
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+
+}
+
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+
+
+
+
+</script>
+
+</body>
+</html>
